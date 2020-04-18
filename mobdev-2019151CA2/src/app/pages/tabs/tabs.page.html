@@ -1,9 +1,32 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>tabs</ion-title>
-  </ion-toolbar>
-</ion-header>
+<ion-tabs>
+	<!--Genereting a tab bar with buttons that will redirect to the pages-->
+	<ion-tab-bar slot="top">
+		<!--This will show the tab bars on the top of the page-->
+		<!--each page has a button-->
+		<ion-tab-button tab="characters">
+			<!--page linked-->
+			<ion-icon name="people-circle"></ion-icon>
+			<!--page icon-->
+			<ion-label>Characters</ion-label>
+			<!--name printed in the button-->
+		</ion-tab-button>
 
-<ion-content>
+		<!--The process is repited to each page-->
+		<ion-tab-button tab="episodes">
+			<ion-icon name="film"></ion-icon>
+            <ion-label>Episodes</ion-label>
+		</ion-tab-button>
 
-</ion-content>
+		<ion-tab-button tab="quotes">
+			<ion-icon name="chatbubbles"></ion-icon>
+			<ion-label>Quotes</ion-label>
+		</ion-tab-button>
+
+		<ion-tab-button tab="deaths">
+			<ion-icon name="person-remove"></ion-icon>
+			<ion-label>Deaths</ion-label>
+		</ion-tab-button>
+
+	</ion-tab-bar>
+
+</ion-tabs>
