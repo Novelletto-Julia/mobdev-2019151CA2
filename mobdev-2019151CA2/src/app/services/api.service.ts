@@ -8,10 +8,10 @@ export class ApiService {
 
     constructor(private http: HttpClient) { }
 
-    getcharacters() {
+    getCharacters() {
         return this.http.get('https://www.breakingbadapi.com/api/characters');
     }
-    getcharacter(id) {
+    getCharacter(id) {
         return this.http.get('https://www.breakingbadapi.com/api/characters/$(id)');
     }
 
@@ -25,7 +25,7 @@ export class ApiService {
     getQuotes() {
         return this.http.get('https://www.breakingbadapi.com/api/quotes');
     }
-    getquote(id) {
+    getQuote(id) {
         return this.http.get('https://www.breakingbadapi.com/api/quote/$(id)');
     }
 
