@@ -27,7 +27,6 @@ export class EpisodesDetailsPage implements OnInit {
 
         });
 
-
         this.favouriteService.isFavourite(this.episodeId).then(isFav => {
             this.isFavourite = isFav;
         });
