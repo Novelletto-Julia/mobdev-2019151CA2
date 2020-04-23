@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { ApiService } from '../../services/api.service';
-import { FavouriteService } from './../../services/favourite.service';
+import { FavouriteCharService } from './../../services/favourite-char.service';
 
 @Component({
     selector: 'app-characters-details',
@@ -13,9 +13,9 @@ export class CharactersDetailsPage implements OnInit {
     character: any;
     characterId = null;
     isFavourite = false;
-    charId = null;
 
-    constructor(private activatedRoute: ActivatedRoute, private api: ApiService, private favouriteService: FavouriteService) { }
+
+    constructor(private activatedRoute: ActivatedRoute, private api: ApiService, private favouriteCharService: FavouriteCharService) { }
 
     ngOnInit() {
 
@@ -27,6 +27,21 @@ export class CharactersDetailsPage implements OnInit {
             console.log(JSON.stringify(this.character.char_id));
         });
 
+        this.favouriteCharService.isFavourite(this.characterId).then(isFav => {
+            this.isFavourite = isFav;
+        });
+    }
+
+    favouriteCharacter() {
+        this.favouriteCharService.favouriteCharacter(this.characterId).then(() => {
+            this.isFavourite = true;
+        });
+    }
+
+    unfavouriteCharacter() {
+        this.favouriteCharService.unfavouriteCharacter(this.characterId).then(() => {
+            this.isFavourite = false;
+        });
 
     }
 }

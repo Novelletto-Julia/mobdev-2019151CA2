@@ -15,31 +15,30 @@ export class FavouriteService {
     return this.storage.get(STORAGE_KEY);
   }
  
-  isFavourite(epiId) {
+  isFavourite(episodeId) {
     return this.getAllFavouriteEpisodes().then(result => {
-      return result && result.indexOf(epiId) !== -1;
+      return result && result.indexOf(episodeId) !== -1;
     });
   }
  
-  favouriteEpisode(epiId) {
+  favouriteEpisode(episodeId) {
     return this.getAllFavouriteEpisodes().then(result => {
       if (result) {
-        result.push(epiId);
+        result.push(episodeId);
         return this.storage.set(STORAGE_KEY, result);
       } else {
-        return this.storage.set(STORAGE_KEY, [epiId]);
+        return this.storage.set(STORAGE_KEY, [episodeId]);
       }
     });
   }
  
-  unfavouriteEpisode(epiId) {
+  unfavouriteEpisode(episodeId) {
     return this.getAllFavouriteEpisodes().then(result => {
       if (result) {
-        var index = result.indexOf(epiId);
+        var index = result.indexOf(episodeId);
         result.splice(index, 1);
         return this.storage.set(STORAGE_KEY, result);
       }
     });
   }
- 
   }
