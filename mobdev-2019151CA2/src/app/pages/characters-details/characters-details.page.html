@@ -1,15 +1,15 @@
 <ion-header>
-	<ion-toolbar color="primary">
+	<ion-toolbar>
 		<ion-button slot="start">
 			<ion-back-button defaulthref="/tabs/characters"></ion-back-button>
 		</ion-button>
 		<ion-title>{{ character?.name }}</ion-title>
        <ion-buttons slot="end">
     <ion-button (click)="unfavouriteCharacter()" *ngIf="isFavourite">
-      <ion-icon name="star" slot="icon-only"></ion-icon>
+      <ion-icon name="heart" slot="icon-only"></ion-icon>
     </ion-button>
     <ion-button (click)="favouriteCharacter()" *ngIf="!isFavourite">
-      <ion-icon name="star-outline" slot="icon-only"></ion-icon>
+      <ion-icon name="heart-outline" slot="icon-only"></ion-icon>
     </ion-button>
   </ion-buttons>
 	</ion-toolbar>
@@ -18,11 +18,11 @@
 <ion-content>
 	<ion-card *ngIf="character">
 
-		<ion-card-content>
-			<img src="{{ character.img }}">
+		<ion-card-content >
+			<img src="{{ character.img }}" class="center">
 		</ion-card-content>
 
-			<ion-card-content>
+			<ion-card-content >
 				<h2> Nickname: {{ character.nickname }} </h2>
 			</ion-card-content>
 
