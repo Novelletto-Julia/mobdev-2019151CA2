@@ -10,15 +10,48 @@ import { Observable } from 'rxjs';
 })
 export class CharactersPage implements OnInit {
 
-     characters: Observable<any>;
+    //Creation of an array to organize the characters taken from API
+     characters = [];
+    //In total, as described in the breaking bad API documentation, there are 63 character
+     charactersTotal: 63;
+     //Starting page
+     page = 0;
+    
 
   constructor(private router: Router, private api: ApiService) { }
 
   ngOnInit() {
-    this.characters = this.api.getCharacters();
-        this.characters.subscribe(data => {
+   
+ this.loadCharacters();
+    }
+
+    loadCharacters(event?) {
+
+        
+        this.api.getCharacters(this.page).subscribe(data => {
+
             console.log('my data: ', data);
-        });
+
+          
+            this.characters = this.characters.concat(data);
+
+           
+            if (event) {
+                event.target.complete();
+            }
+        })
+    }
+
+    loadMore(event?) {
+      
+        this.page = this.page + 20;
+      
+        this.loadCharacters(event);
+
+       
+        if (this.page > this.page) {
+            event.target.disabled = true;
+        }
     }
 
     openDetails(character) {

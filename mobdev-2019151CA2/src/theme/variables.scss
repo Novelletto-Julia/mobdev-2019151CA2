@@ -31,11 +31,16 @@
   ion-title{
     font-size: 28px;
   }
-
+  ion-avatar{
+    padding: 3px;
+    border: 1px solid;
+    border-color: var(--ion-color-primary);
+    border-radius: 100px;
+  }
   p{
        font-size: 18px;
   }
-  
+
   blockquote{
       font-style: italic;
       font-size: 18px;

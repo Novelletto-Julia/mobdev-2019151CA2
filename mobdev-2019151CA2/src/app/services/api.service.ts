@@ -8,8 +8,8 @@ export class ApiService {
 
     constructor(private http: HttpClient) { }
 
-    getCharacters() {
-        return this.http.get('https://www.breakingbadapi.com/api/characters');
+    getCharacters(page) {
+        return this.http.get(`https://www.breakingbadapi.com/api/characters?limit=20&offset=${page}`);
     }
     getCharacter(id) {
         return this.http.get(`https://www.breakingbadapi.com/api/characters/${id}`);
