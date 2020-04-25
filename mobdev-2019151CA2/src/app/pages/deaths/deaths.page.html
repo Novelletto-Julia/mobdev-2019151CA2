@@ -1,13 +1,15 @@
 <ion-header>
-	<ion-toolbar color="primary">
-		<ion-title>Total number of deaths</ion-title>
+	<ion-toolbar color="success">
+		<ion-title class="ion-text-center">Total number of deaths</ion-title>
 	</ion-toolbar>
 </ion-header>
 
 <ion-content>
 
-	<ion-item *ngFor="let death of deaths | async" >
+<ion-card class="center" *ngFor="let death of deaths | async">
 
-		<h1 class="center">{{ death.deathCount }} </h1>
-	</ion-item>
+
+		<p class="ion-text-center"><b>{{ death.deathCount }} </b></p>
+
+</ion-card>
 </ion-content>

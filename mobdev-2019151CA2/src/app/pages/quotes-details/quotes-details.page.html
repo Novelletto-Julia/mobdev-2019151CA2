@@ -1,15 +1,15 @@
 <ion-header>
-	<ion-toolbar color="primary">
+	<ion-toolbar>
 		<ion-button slot="start">
 			<ion-back-button defaulthref="/tabs/quotes"></ion-back-button>
 		</ion-button>
-		<ion-title>{{ quote?.quote }}</ion-title>
+		<ion-title class="ion-text-center">{{ quote?.quote }}</ion-title>
         <ion-buttons slot="end">
 			<ion-button (click)="unfavouriteQuote()" *ngIf="isFavourite">
-				<ion-icon name="star" slot="icon-only"></ion-icon>
+				<ion-icon name="heart" slot="icon-only"></ion-icon>
 			</ion-button>
 			<ion-button (click)="favouriteQuote()" *ngIf="!isFavourite">
-				<ion-icon name="star-outline" slot="icon-only"></ion-icon>
+				<ion-icon name="heart-outline" slot="icon-only"></ion-icon>
 			</ion-button>
 		</ion-buttons>
 	</ion-toolbar>
@@ -18,13 +18,16 @@
 <ion-content>
 	<ion-card *ngIf="quote">
 		<ion-card-content>
-			<h2> Complete Quote: {{ quote.quote }} </h2>
-		</ion-card-content>
+			<p> <b><u>Quote:</u></b> </p>
+        	<blockquote> {{ quote.quote }} </blockquote>       
+        </ion-card-content>
+
 		<ion-card-content>
-			<h2> Series: {{ quote.series }} </h2>
+			<p><b><u>Series:</u></b> {{ quote.series }} </p>
 		</ion-card-content>
+
 		<ion-card-content>
-			<h2> Author: {{ quote.author }} </h2>
+			<p><b><u>Author:</u></b> {{ quote.author }} </p>
 		</ion-card-content>
 	</ion-card>
 </ion-content>

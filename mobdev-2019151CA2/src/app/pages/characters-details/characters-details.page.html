@@ -3,7 +3,7 @@
 		<ion-button slot="start">
 			<ion-back-button defaulthref="/tabs/characters"></ion-back-button>
 		</ion-button>
-		<ion-title>{{ character?.name }}</ion-title>
+		<ion-title class="ion-text-center">{{ character?.name }}</ion-title>
        <ion-buttons slot="end">
     <ion-button (click)="unfavouriteCharacter()" *ngIf="isFavourite">
       <ion-icon name="heart" slot="icon-only"></ion-icon>
@@ -23,23 +23,23 @@
 		</ion-card-content>
 
 			<ion-card-content >
-				<h2> Nickname: {{ character.nickname }} </h2>
+				<p> <b><u>Nickname:</u></b>  {{ character.nickname }} </p>
 			</ion-card-content>
 
 			<ion-card-content>
-				<h2>Birthday: {{ character.birthday }} </h2>
+				<p><b><u>Birthday:</u></b> {{ character.birthday }} </p>
 			</ion-card-content>
 
 			<ion-card-content>
-				<h2> Occupation: {{ character.occupation }} </h2>
+				<p> <b><u>Occupation:</u></b> {{ character.occupation }} </p>
 			</ion-card-content>
 
 			<ion-card-content>
-				<h2> Status: {{ character.status }} </h2>
+				<p> <b><u>Dead or Alive:</u></b> {{ character.status }} </p>
 			</ion-card-content>
 
 			<ion-card-content>
-				<h2> Actor/Actress: {{ character.portrayed }} </h2>
+				<p> <b><u>Actor/Actress:</u></b> {{ character.portrayed }} </p>
 			</ion-card-content>
 
 	</ion-card>
