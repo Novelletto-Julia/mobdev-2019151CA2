@@ -1,3 +1,4 @@
+<!--Similar to characters. view characters for references-->
 <ion-header>
 	<ion-toolbar color="tertiary">
 		<ion-title class="ion-text-center">Quotes</ion-title>
@@ -5,9 +6,19 @@
 </ion-header>
 
 <ion-content>
-<ion-list>
-        <ion-item button detail lines ="inset" *ngFor="let quote of quotes | async" (click) = "openDetails(quote)">
-        {{ quote.quote }}
-        </ion-item>
-    </ion-list>
+	<ion-card>
+		<p>You can see all the quotes from a character by search their names.</p>
+	</ion-card>
+	<!--The search bar is created using a feature from the ionic application called ion-searchbar
+    It is going to accept an name and is going to pass the information for the search method and so on. The placeholder is the text displayed in the search bar
+    and in my case the cancelbutton is going to help obtain different results when change the query (more explanations in api.service.ts)-->
+	<ion-searchbar [(ngModel)]="author" (ionInput)="search($event)" placeholder="Search by author's name"
+		[showCancelButton]="shouldShowCancel"></ion-searchbar>
+
+
+	<ion-list>
+		<ion-item button detail lines="inset" *ngFor="let quote of quotes | async" (click)="openDetails(quote)">
+			{{ quote.quote }}
+		</ion-item>
+	</ion-list>
 </ion-content>

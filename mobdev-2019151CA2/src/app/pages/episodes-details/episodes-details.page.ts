@@ -8,6 +8,7 @@ import { FavouriteService } from './../../services/favourite.service';
     templateUrl: './episodes-details.page.html',
     styleUrls: ['./episodes-details.page.scss'],
 })
+//Similar to character details. view characters details for more references
 export class EpisodesDetailsPage implements OnInit {
 
     episode: any;

@@ -1,14 +1,17 @@
 <ion-header>
+<!--The toolbar will have information as the button to go back to characters, name of the character and the favorite button -->
 	<ion-toolbar>
-		<ion-button slot="start">
+		<ion-button slot="start"> <!--The slot select the place in which the button will apper, start is at left, end is right-->
 			<ion-back-button defaulthref="/tabs/characters"></ion-back-button>
 		</ion-button>
+        <!--The title in this case is the character name, variable passed from the characters page-->
 		<ion-title class="ion-text-center">{{ character?.name }}</ion-title>
        <ion-buttons slot="end">
+       <!--this buttons favorite and unfavorite is responsable to activate the favorites methods and store the option chose for each character-->
     <ion-button (click)="unfavouriteCharacter()" *ngIf="isFavourite">
       <ion-icon name="heart" slot="icon-only"></ion-icon>
     </ion-button>
-    <ion-button (click)="favouriteCharacter()" *ngIf="!isFavourite">
+    <ion-button (click)="favouriteCharacter()" *ngIf="!isFavourite"><!--In here they call the method and define if it is favorite or not, in the case, not favorite-->
       <ion-icon name="heart-outline" slot="icon-only"></ion-icon>
     </ion-button>
   </ion-buttons>
@@ -16,12 +19,15 @@
 </ion-header>
 
 <ion-content>
-	<ion-card *ngIf="character">
+
+<!--This call the method to get information from the api, after that is possible to display information using the variable name from the api-->
+	<ion-card *ngIf="character"> 
 
 		<ion-card-content >
-			<img src="{{ character.img }}" class="center">
+			<img src="{{ character.img }}" class="center"> <!--Display the image of each character-->
 		</ion-card-content>
-
+            
+            <!--name and other details. The details will be different from each page of course-->
 			<ion-card-content >
 				<p> <b><u>Nickname:</u></b>  {{ character.nickname }} </p>
 			</ion-card-content>

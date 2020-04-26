@@ -1,3 +1,4 @@
+<!--Similar to characters. view characters for references-->
 <ion-header>
 	<ion-toolbar color="tertiary">
 		<ion-title class="ion-text-center">Episodes</ion-title>
@@ -5,9 +6,9 @@
 </ion-header>
 
 <ion-content>
-    <ion-list>
-        <ion-item button detail lines ="inset" *ngFor="let episode of episodes | async" (click) = "openDetails(episode)">
-        {{ episode.title }}
-        </ion-item>
-    </ion-list>
+	<ion-list>
+		<ion-item button detail lines="inset" *ngFor="let episode of episodes | async" (click)="openDetails(episode)">
+			{{ episode.title }}
+		</ion-item>
+	</ion-list>
 </ion-content>

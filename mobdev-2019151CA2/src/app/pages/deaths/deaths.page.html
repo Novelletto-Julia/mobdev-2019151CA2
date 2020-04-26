@@ -1,3 +1,4 @@
+<!--Similar to characters. view characters for references-->
 <ion-header>
 	<ion-toolbar color="success">
 		<ion-title class="ion-text-center">Total number of deaths</ion-title>
@@ -5,6 +6,13 @@
 </ion-header>
 
 <ion-content>
+<ion-card>
+<p>This is the number total of deaths in the series. If you like, is possible to look for a character in the search and see how many people he/she was responsable for the death!</p>
+<br>
+<p>Go aready and look for you killer!</p>
+</ion-card>
+<!--To create the search system I used as base a post in a forum by wlangiewicz user (ref: https://forum.ionicframework.com/t/ionic-ion-searchbar-searching-only-when-enter-is-pressed/42003)-->
+<ion-searchbar [(ngModel)]="death" (ionInput)="search($event)" placeholder="Search for a murderer"></ion-searchbar>
 
 <ion-card class="center" *ngFor="let death of deaths | async">
 

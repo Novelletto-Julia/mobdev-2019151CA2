@@ -1,10 +1,13 @@
+/*This is the style thatis specific for this page
+ *all stiling of the image that this page contain is in here
+ */
 img {
-    border: 2px solid var(--ion-color-secondary);
+    border: 2px solid var(--ion-color-secondary); //I used W3 Schools for css styling guidelines
     border-radius: 8px;
     width: 100%;
     height: auto;
 }
-
+//Ion-icon is styled in all xxx.details.page.scsss as all of them contain the same icon
 ion-icon{
     color: var(--ion-color-primary); 
 }

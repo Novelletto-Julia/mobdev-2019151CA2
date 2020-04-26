@@ -8,6 +8,7 @@ import { FavouriteSerService } from './../../services/favourite-ser.service';
   templateUrl: './quotes-details.page.html',
   styleUrls: ['./quotes-details.page.scss'],
 })
+//Similar to character details. view characters details for more references
 export class QuotesDetailsPage implements OnInit {
 
     quote: any;
