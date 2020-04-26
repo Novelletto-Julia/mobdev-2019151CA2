@@ -9,7 +9,7 @@ import { FavouriteCharService } from './../../services/favourite-char.service';
     styleUrls: ['./characters-details.page.scss'],
 })
 export class CharactersDetailsPage implements OnInit {
-    
+
     //Inicialization of the variables used in the methods
     character: any; //character that will be selected
     characterId = null; //id of selected character
@@ -48,7 +48,7 @@ export class CharactersDetailsPage implements OnInit {
         this.favouriteCharService.unfavouriteCharacter(this.characterId).then(() => {
             this.isFavourite = false;
         });
-    //This two methods work togheter, this create the opition to select as favorite and then if change you mind change for not favorite
+        //This two methods work togheter, this create the opition to select as favorite and then if change you mind change for not favorite
     }
 }
 

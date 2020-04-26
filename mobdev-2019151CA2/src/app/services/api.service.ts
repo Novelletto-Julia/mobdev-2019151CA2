@@ -47,12 +47,6 @@ quotes: Array<any>;
          }
           return of(authorQuotes);//return this array, this will display only the quotes from that specific author
      }
-     /* I am aware that the functionality is not the best. In the first time the name is written the result is show at once.
-     * However, if another name is written it does't change the array until you click the cancel button. Once the small x on the right side is clicked
-     * the name in the search bar is erased but the quotes shown is from the last caracter you named. Also, is impossible to retrive the quotes array for now
-     * I believe I could search and impove this with more time of research about search in ionic. But for this CA I was't able to fix it
-     */
-
 
     getQuote(id) {
         return this.http.get(`https://www.breakingbadapi.com/api/quotes/${id}`);

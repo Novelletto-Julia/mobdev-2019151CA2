@@ -2,25 +2,30 @@
 for structure this app, pages and some of the logic, I used the classes and presentations provided by Mikhail Timofeev
 this structure is similar for the others pages (that are not details)-->
 <ion-header>
-	<ion-toolbar color="tertiary"><!--Styling in line-->
-		<ion-title class="ion-text-center">Characters</ion-title><!---This is the title of the tab selected-->
+	<ion-toolbar color="tertiary">
+		<!--Styling in line-->
+		<ion-title class="ion-text-center">Characters</ion-title>
+		<!---This is the title of the tab selected-->
 	</ion-toolbar>
 </ion-header>
 
 <ion-content>
-<ion-list ><!--This list will call all the characters existent in the array-->
-        <ion-item button detail lines ="inset" *ngFor="let character of characters" (click) = "openDetails(character)"><!--This is displayed as a button that when clicked access the details page-->
-        <!--The function avatar makes possible display images infront of the names of each caracter-->
-        <ion-avatar slot="start"><img src="{{ character.img }}"> </ion-avatar>  {{  character.name }}
-        </ion-item>
-    </ion-list>
+	<ion-list>
+		<!--This list will call all the characters existent in the array-->
+		<ion-item button detail lines="inset" *ngFor="let character of characters" (click)="openDetails(character)">
+			<!--This is displayed as a button that when clicked access the details page-->
+			<!--The function avatar makes possible display images infront of the names of each caracter-->
+			<ion-avatar slot="start"><img src="{{ character.img }}"> </ion-avatar> {{  character.name }}
+		</ion-item>
+	</ion-list>
 
-    <!--Html code for infinit scrool
+	<!--Html code for infinit scrool
     * The threshold tells the limit you have to ative to start loading new characters
     *5% will scroll almost to the end of the page for than start loading again
     * ref: Simon Grimm (https://www.youtube.com/watch?v=NBeExE9dvR0)-->
 	<ion-infinite-scroll threshold="5%" (ionInfinite)="loadMore($event)">
-		<ion-infinite-scroll-content loadingSpinner="bubbles" loadingText="Loading more characters..."><!--loading text will be displayed while te information is accessed in the api-->
+		<ion-infinite-scroll-content loadingSpinner="bubbles" loadingText="Loading more characters...">
+			<!--loading text will be displayed while te information is accessed in the api-->
 		</ion-infinite-scroll-content>
 	</ion-infinite-scroll>
 

@@ -5,7 +5,7 @@
 			<ion-back-button defaulthref="/tabs/quotes"></ion-back-button>
 		</ion-button>
 		<ion-title class="ion-text-center">{{ quote?.quote }}</ion-title>
-        <ion-buttons slot="end">
+		<ion-buttons slot="end">
 			<ion-button (click)="unfavouriteQuote()" *ngIf="isFavourite">
 				<ion-icon name="heart" slot="icon-only"></ion-icon>
 			</ion-button>
@@ -20,8 +20,8 @@
 	<ion-card *ngIf="quote">
 		<ion-card-content>
 			<p> <b><u>Quote:</u></b> </p>
-        	<blockquote> {{ quote.quote }} </blockquote>       
-        </ion-card-content>
+			<blockquote> {{ quote.quote }} </blockquote>
+		</ion-card-content>
 
 		<ion-card-content>
 			<p><b><u>Series:</u></b> {{ quote.series }} </p>

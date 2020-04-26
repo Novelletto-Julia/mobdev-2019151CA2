@@ -4,9 +4,9 @@ import { ApiService } from '../../services/api.service';
 import { FavouriteSerService } from './../../services/favourite-ser.service';
 
 @Component({
-  selector: 'app-quotes-details',
-  templateUrl: './quotes-details.page.html',
-  styleUrls: ['./quotes-details.page.scss'],
+    selector: 'app-quotes-details',
+    templateUrl: './quotes-details.page.html',
+    styleUrls: ['./quotes-details.page.scss'],
 })
 //Similar to character details. view characters details for more references
 export class QuotesDetailsPage implements OnInit {
@@ -15,9 +15,9 @@ export class QuotesDetailsPage implements OnInit {
     quoteId = null;
     isFavourite = false;
 
-  constructor(private activatedRoute: ActivatedRoute, private api: ApiService, private favouriteService: FavouriteSerService) { }
+    constructor(private activatedRoute: ActivatedRoute, private api: ApiService, private favouriteService: FavouriteSerService) { }
 
- ngOnInit() {
+    ngOnInit() {
 
         this.quoteId = this.activatedRoute.snapshot.paramMap.get('id');
 
@@ -25,7 +25,7 @@ export class QuotesDetailsPage implements OnInit {
             this.quote = res[0];
             console.log(JSON.stringify(res[0]));
         });
-        
+
         this.favouriteService.isFavourite(this.quoteId).then(isFav => {
             this.isFavourite = isFav;
         });
@@ -42,6 +42,6 @@ export class QuotesDetailsPage implements OnInit {
             this.isFavourite = false;
         });
     }
-  }
+}
 
 

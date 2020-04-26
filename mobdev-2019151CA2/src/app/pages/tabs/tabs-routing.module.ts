@@ -8,6 +8,15 @@ const routes: Routes = [
         path: 'tabs',
         component: TabsPage,
         children: [
+               {
+        path: 'welcome',
+        children: [
+          {
+            path: '',
+            loadChildren: () => import('../welcome/welcome.module').then( m => m.WelcomePageModule)
+          },
+        ]
+      },
             {
                 path: 'characters',
                 children: [
@@ -60,7 +69,7 @@ const routes: Routes = [
     },
     {
         path: '',
-        redirectTo: '/tabs/characters',
+        redirectTo: '/tabs/welcome',
         pathMatch: 'full'
     }
 ];

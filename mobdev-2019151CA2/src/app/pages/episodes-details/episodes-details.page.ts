@@ -14,7 +14,7 @@ export class EpisodesDetailsPage implements OnInit {
     episode: any;
     episodeId = null;
     isFavourite = false;
-   
+
 
     constructor(private activatedRoute: ActivatedRoute, private api: ApiService, private favouriteService: FavouriteService) { }
 

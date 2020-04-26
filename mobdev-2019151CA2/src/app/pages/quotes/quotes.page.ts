@@ -5,17 +5,17 @@ import { Observable } from 'rxjs';
 
 //Similar to characters. view characters for references
 @Component({
-  selector: 'app-quotes',
-  templateUrl: './quotes.page.html',
-  styleUrls: ['./quotes.page.scss'],
+    selector: 'app-quotes',
+    templateUrl: './quotes.page.html',
+    styleUrls: ['./quotes.page.scss'],
 })
 export class QuotesPage implements OnInit {
 
-   quotes: Observable<any>;
-   quote: any; //variable created for the search method
-   author: string = ''; //variable created for the search method, this variable will store the character's name typed by the user
+    quotes: Observable<any>;
+    quote: any; //variable created for the search method
+    author: string = ''; //variable created for the search method, this variable will store the character's name typed by the user
 
-  constructor(private router: Router, private api: ApiService) { }
+    constructor(private router: Router, private api: ApiService) { }
 
     ngOnInit() {
         this.quotes = this.api.getQuotes();
@@ -28,8 +28,8 @@ export class QuotesPage implements OnInit {
      * it will look for it inside the array quotes
     */
     search() {
-         this.quotes = this.api.searchQuote(this.author);
-     }
+        this.quotes = this.api.searchQuote(this.author);
+    }
 
     openDetails(quote) {
         let quoteId = quote.quote_id;

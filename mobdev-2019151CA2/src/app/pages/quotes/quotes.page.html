@@ -11,13 +11,15 @@
 	</ion-card>
 	<!--The search bar is created using a feature from the ionic application called ion-searchbar
     It is going to accept an name and is going to pass the information for the search method and so on. The placeholder is the text displayed in the search bar
-    and in my case the cancelbutton is going to help obtain different results when change the query (more explanations in api.service.ts)-->
-	<ion-searchbar [(ngModel)]="author" (ionInput)="search($event)" placeholder="Search by author's name"
+    and the cancel button clears the written name from the search bar-->
+	<ion-searchbar [(ngModel)]="author" (ionChange)="search($event)" placeholder="Search by author's name"
 		[showCancelButton]="shouldShowCancel"></ion-searchbar>
-
+	<!--In the beginning I had problems with the search. I used ionInput instead of ionChange
+    This resulted in a error in which I could not obtain the whole list after quering a name. The ionChange solve that, so now is possible to search for a name and when erase it see the whole list of quotes again-->
 
 	<ion-list>
 		<ion-item button detail lines="inset" *ngFor="let quote of quotes | async" (click)="openDetails(quote)">
+			<!--Show list of quotes-->
 			{{ quote.quote }}
 		</ion-item>
 	</ion-list>
