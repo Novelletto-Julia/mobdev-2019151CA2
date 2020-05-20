@@ -1,0 +1,15 @@
+<ion-header>
+    <ion-toolbar color="tertiary">
+		<ion-title class="ion-text-center">Camera</ion-title>
+  </ion-toolbar>
+</ion-header>
+<!--This camera functionality was build based on this tutorial (https://capacitor.ionicframework.com/docs/guides/ionic-framework-app/?fbclid=IwAR2bwZqmZ5qjGRkQBECect9J81vX438HeRlLlJ_RZAWMb2kk8GU-3dZLnhs) -->
+<ion-content>
+  <img [src]="photo" >
+
+  <ion-fab vertical="bottom" horizontal="center" slot="fixed">
+    <ion-fab-button (click)="takePicture()">
+      <ion-icon name="camera"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+</ion-content>

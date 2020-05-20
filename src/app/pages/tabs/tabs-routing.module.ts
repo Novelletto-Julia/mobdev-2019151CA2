@@ -8,15 +8,15 @@ const routes: Routes = [
         path: 'tabs',
         component: TabsPage,
         children: [
-               {
-        path: 'welcome',
-        children: [
-          {
-            path: '',
-            loadChildren: () => import('../welcome/welcome.module').then( m => m.WelcomePageModule)
-          },
-        ]
-      },
+            {
+                path: 'welcome',
+                children: [
+                    {
+                        path: '',
+                        loadChildren: () => import('../welcome/welcome.module').then(m => m.WelcomePageModule)
+                    },
+                ]
+            },
             {
                 path: 'characters',
                 children: [
@@ -64,9 +64,20 @@ const routes: Routes = [
                         loadChildren: () => import('../deaths/deaths.module').then(m => m.DeathsPageModule)
                     }
                 ]
+            },
+            {
+                path: 'camera',
+                children: [
+                    {
+                        path: '',
+                        loadChildren: () => import('../camera/camera.module').then(m => m.CameraPageModule)
+                    }
+                ]
             }
         ]
     },
+
+
     {
         path: '',
         redirectTo: '/tabs/welcome',
